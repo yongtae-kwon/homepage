@@ -264,3 +264,10 @@ footer {
     color:#444;
   }
 }
+a, a:link, a:visited {
+  color: #BF5700 !important; /* UT Burnt Orange */
+}
+
+a:hover, a:active, a:focus {
+  color: #8F3E00 !important; /* darker hover */
+}
