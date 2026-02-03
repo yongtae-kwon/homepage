@@ -274,7 +274,8 @@ a:hover, a:active, a:focus {
 
 /* keep the whole bracket line together */
 .paper-links {
-  white-space: nowrap;
+  display: inline;
+
 }
 
 /* make <details> behave like an inline link */
