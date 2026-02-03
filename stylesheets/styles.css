@@ -272,34 +272,36 @@ a:hover, a:active, a:focus {
   color: #8F3E00 !important; /* darker hover */
 }
 
-/* make details behave inline */
+/* keep the whole bracket line together */
+.paper-links {
+  white-space: nowrap;
+}
+
+/* make <details> behave like an inline link */
 details.abs {
   display: inline;
 }
 
-/* style the clickable word */
+/* style the clickable word "abstract" */
 details.abs > summary {
   display: inline;
   cursor: pointer;
-  color: #BF5700; /* Burnt Orange */
+  color: #BF5700;          /* UT Burnt Orange */
   list-style: none;
 }
 
-/* remove triangle marker */
+/* remove the default triangle marker */
 details.abs > summary::-webkit-details-marker {
   display: none;
 }
 
-/* hide abstract by default */
-.abs-box {
-  display: none;
+/* the revealed abstract box */
+details.abs .abs-box {
+  white-space: normal;     /* let abstract wrap normally */
+  display: block;
   margin-top: 10px;
   padding: 10px 12px;
   border-left: 3px solid #BF5700;
   background: #faf7f2;
-}
-
-/* show abstract when details is open */
-details.abs[open] + .abs-box {
-  display: block;
+  color: #444;
 }
