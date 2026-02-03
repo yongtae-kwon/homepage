@@ -271,3 +271,5 @@ a, a:link, a:visited {
 a:hover, a:active, a:focus {
   color: #8F3E00 !important; /* darker hover */
 }
+html { font-size: 18px; }
+body { font-size: 1rem !important; }
