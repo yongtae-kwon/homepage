@@ -271,15 +271,19 @@ a, a:link, a:visited {
 a:hover, a:active, a:focus {
   color: #8F3E00 !important; /* darker hover */
 }
-/* tighten spacing between title/authors/links */
-.paper-title { margin: 0 0 2px; }
-.paper-authors { margin: 0 0 6px; }
-.paper-links { margin: 0 0 10px; }   /* space BEFORE next section */
 
-/* keep [ abstract | AEA Registry ] on one line */
+/* remove default p spacing weirdness */
+.paper p { margin: 0; }
+
+/* tighten spacing between title/authors/links */
+.paper-title   { margin: 0 0 2px; }
+.paper-authors { margin: 0 0 6px; }
+.paper-links   { margin: 0 0 0; line-height: 1.2; }
+
+/* keep the bracket line on one line */
 .paper-links { white-space: nowrap; }
 
-/* make <details> behave like an inline link */
+/* details should behave like inline text */
 details.abs { display: inline; }
 
 /* clickable "abstract" styling */
@@ -289,21 +293,19 @@ details.abs > summary {
   color: #BF5700;
   list-style: none;
 }
-
-/* remove default markers (Chrome/Safari + Firefox) */
 details.abs > summary::-webkit-details-marker { display: none; }
 details.abs > summary::marker { content: ""; }
 
 /* abstract box hidden by default */
-details.abs .abs-box {
+.abs-box {
   display: none;
-  white-space: normal;      /* allow wrapping inside the box */
-  margin: 6px 0 18px;
+  margin: 8px 0 18px;
   padding: 10px 12px;
   border-left: 3px solid #BF5700;
   background: #faf7f2;
   color: #444;
+  white-space: normal;   /* allow wrapping inside the box */
 }
 
-/* show abstract when details is open */
-details.abs[open] .abs-box { display: block; }
+/* show abstract box ONLY when details is open */
+details.abs[open] + .abs-box { display: block; }
